@@ -1,10 +1,10 @@
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_proto_library", "cc_test")
-load("//third_party:substitution.bzl", "template_rule")
-load("//:tools/build_variables.bzl", "torch_cpp_srcs", "libtorch_core_sources", "libtorch_distributed_sources", "libtorch_extra_sources")
-load("//tools/rules:cu.bzl", "cu_library")
-load("//tools/config:defs.bzl", "if_cuda")
-load("//:aten.bzl", "intern_build_aten_ops")
+load("@pytorch//third_party:substitution.bzl", "template_rule")
+load("@pytorch//:tools/build_variables.bzl", "torch_cpp_srcs", "libtorch_core_sources", "libtorch_distributed_sources", "libtorch_extra_sources")
+load("@pytorch//tools/rules:cu.bzl", "cu_library")
+load("@pytorch//tools/config:defs.bzl", "if_cuda")
+load("@pytorch//:aten.bzl", "intern_build_aten_ops")
 
 COMMON_COPTS = [
     "-DHAVE_MALLOC_USABLE_SIZE=1",

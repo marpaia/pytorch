@@ -1,7 +1,7 @@
 workspace(name = "pytorch")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-load("//tools/rules:workspace.bzl", "new_patched_local_repository")
+load("@pytorch//tools/rules:workspace.bzl", "new_patched_local_repository")
 
 http_archive(
     name = "bazel_skylib",
@@ -122,7 +122,7 @@ new_local_repository(
 new_patched_local_repository(
     name = "tbb",
     patches = [
-        "@//third_party:tbb.patch",
+        "@pytorch//third_party:tbb.patch",
     ],
     patch_strip = 1,
     build_file = "//third_party:tbb.BUILD",
